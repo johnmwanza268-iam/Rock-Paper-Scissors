@@ -11,9 +11,11 @@ function getComputerChoice () {
 }
 
 function getHumanChoice () {
-let choice = prompt("Enter a number between 1 and 3: ");
+let input = prompt("Enter a number between 1 and 3: ");
 
-    choice = Number(choice)
+    if(input === null) return null;
+
+    choice = Number(input)
 
     if (choice === 1) {
         return "rock"
@@ -25,7 +27,6 @@ let choice = prompt("Enter a number between 1 and 3: ");
 }
 
 function playRound(humanChoice,computerChoice) {
-    humanChoice = humanChoice.toLowerCase()
 
     if (humanChoice === computerChoice) {
         console.log("It's a tie!");
